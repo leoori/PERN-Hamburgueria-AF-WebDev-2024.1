@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { onRegistration } from "../api/auth"
 import Layout from "../components/layout"
+import './styles/register.css'
 
 const Register = () => {
     const [values, setValues] = useState({
+        user_name:'',
         email: '',
         password: ''
     })
@@ -23,7 +25,7 @@ const Register = () => {
             
             setError('')
             setSuccess(data.message)
-            setValues({email: '', password: ''})
+            setValues({user_name: '', email: '', password: ''})
 
         } catch (error) {
             console.log(error.response.data.errors[0].msg)
@@ -38,31 +40,40 @@ const Register = () => {
 
     return (
     <Layout>
-        <form onSubmit={(e) => onSubmit(e)} className='container mt-3' >
-            <h1>Register</h1>
+        <div className="register-container">
+            <form onSubmit={(e) => onSubmit(e)} className='container mt-3' >
+                <h1>Cadastre-se</h1>
 
-            <div className='mb-3'>
-                <label htmlFor='email' className='form-label'>
-                    Email address:
-                </label>
-                <input onChange={(e) => onChange(e)} type='email' className='form-control' id='email' name='email' value={values.email} placeholder='Insert Email' required />
-            </div>
+                <div className='mb-3'>
+                    <label htmlFor='text' className='form-label'>
+                        Nome completo:
+                    </label>
+                    <input onChange={(e) => onChange(e)} type='text' className='form-control' id='user_name' name='user_name' value={values.user_name} placeholder='Insira seu nome completo' required />
+                </div>
 
-            <div className='mb-3'>
-                <label htmlFor='password' className='form-label'>
-                    Password:
-                </label>
-                <input onChange={(e) => onChange(e)} type='password' value={values.password} className='form-control' id='password' name='password' placeholder='Insert Password' required />
-            </div>
+                <div className='mb-3'>
+                    <label htmlFor='email' className='form-label'>
+                        Endereço de e-mail:
+                    </label>
+                    <input onChange={(e) => onChange(e)} type='email' className='form-control' id='email' name='email' value={values.email} placeholder='Insira seu e-mail' required />
+                </div>
 
-            <div style={{color: 'red', margin: '10px 0'}}>{error}</div>
-            <div style={{color: 'green', margin: '10px 0'}}>{success}</div>
+                <div className='mb-3'>
+                    <label htmlFor='password' className='form-label'>
+                        Senha:
+                    </label>
+                    <input onChange={(e) => onChange(e)} type='password' value={values.password} className='form-control' id='password' name='password' placeholder='Insira sua senha' required />
+                </div>
+
+                <div style={{color: 'red', margin: '10px 0'}}>{error}</div>
+                <div style={{color: 'green', margin: '10px 0'}}>{success}</div>
 
 
-            <button type='submit' className='btn btn-primary'>
-                Submit
-            </button>
-        </form>
+                <button type='submit' className='btn btn-primary'>
+                    Cadastrar
+                </button>
+            </form>
+        </div>
     </Layout>
     )
 }

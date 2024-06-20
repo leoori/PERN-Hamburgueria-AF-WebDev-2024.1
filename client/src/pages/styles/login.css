@@ -1,0 +1,9 @@
+.login-container {
+    background-image: url('../../assets/freepik-export-20240613214404wWTP.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Garante que o contêiner cubra toda a altura da página */
+    padding: 20px; /* Adicione um espaço interno para o conteúdo */
+    color: #ffffff; /* Define a cor do texto para contrastar com o fundo */
+}
+

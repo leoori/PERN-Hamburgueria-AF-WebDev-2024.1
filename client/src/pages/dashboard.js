@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { fetchProtectedInfo, onLogout } from "../api/auth"
 import Layout from "../components/layout"
 import { unauthenticateUser } from "../redux/slices/authSlice"
+import './styles/dashboard.css'
 
 const Dashboard = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const Dashboard = () => {
 
             dispatch(unauthenticateUser())
             localStorage.removeItem('isAuth')
+            localStorage.removeItem('user_id')
 
         } catch (error) {
             console.log(error.response)
@@ -39,17 +41,19 @@ const Dashboard = () => {
 
     return loading ? (
         <Layout>
-            <h1>loading...</h1>
+            <h1>Carregando...</h1>
         </Layout>
     ) : (
         <div>
             <Layout>
-                <h1>Dashboard</h1>
-                <h2>{protectedData}</h2>
+                <div className="dashboard-container">
+                    <h1>Dashboard</h1>
+                    <h2>{protectedData}</h2>
 
-                <button onClick={() => logout()} className='btn btn-primary'>
-                    Logout
-                </button>
+                    <button onClick={() => logout()} className='btn btn-primary'>
+                        Sair
+                    </button>
+                </div>
             </Layout>
         </div>
     )

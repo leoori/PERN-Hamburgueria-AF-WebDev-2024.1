@@ -4,6 +4,9 @@ import Dashboard from './pages/dashboard'
 import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
+import Burgers from './pages/burgers'
+import Users from './pages/users'
+import Register_Burger from './pages/register_burger'
 
 const PrivateRoutes = () => {
   const {isAuth} = useSelector((state) => state.auth)
@@ -26,6 +29,9 @@ const App = () => {
 
         <Route element={<PrivateRoutes />} >
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/register_burger' element={<Register_Burger />} />
+          <Route path='/burgers' element={<Burgers />} />
+          <Route path='/users' element={<Users />} />
         </Route>
 
         <Route element={<RestrictedRoutes />} >

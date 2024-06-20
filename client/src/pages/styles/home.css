@@ -1,0 +1,22 @@
+/* styles.css */
+.home-container {
+    min-height: calc(100vh - 60px); /* Ajuste conforme o tamanho do seu Navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-title {
+    color: rgb(243, 243, 243);
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.home-button {
+    margin-right: 1rem;
+}
