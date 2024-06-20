@@ -1,2 +1,10 @@
 # PERN-Hamburgueria
- Hamburgueria em PERN
+ AF - Hamburgueria em PERN
+
+# Integrantes
+  Nome Completo | RA
+- Lucas Jeronymo Ribeiro | 210117
+- Vinicius Matheus Nunes Araujo| 211973
+- Leonardo Almeida Proença | 222241
+- Thiago Jun Honma | 222628
+
