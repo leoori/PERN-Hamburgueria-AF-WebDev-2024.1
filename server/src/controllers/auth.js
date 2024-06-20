@@ -18,11 +18,11 @@ exports.getUsers = async(req, res) => {
 }
 
 exports.register = async(req, res) => {
-    const {email, password, user_name} = req.body
+    const {email, phone, password, user_name} = req.body
     try {
         const hashedPassword = await hash(password, 10)
 
-        await db.query('INSERT INTO users(email, password, user_name) VALUES ($1 , $2, $3)', [email, hashedPassword, user_name])
+        await db.query('INSERT INTO users(email, phone, password, user_name) VALUES ($1 , $2, $3, $4)', [email, phone, hashedPassword, user_name])
 
         return res.status(201).json({
             success: true,
@@ -88,7 +88,7 @@ exports.logout = async(req, res) => {
 
 exports.getBurgers = async (req, res) => {
     try {
-        const { rows } = await db.query('SELECT burger_id, burger_name, burger_ingredients, burger_price, burger_supply, created_by, created_by_name FROM burgers');
+        const { rows } = await db.query('SELECT burger_id, burger_name, burger_ingredients, burger_price, burger_supply, created_by, created_by_name, created_by_phone FROM burgers');
         return res.status(200).json({
             success: true,
             burgers: rows,
@@ -113,6 +113,7 @@ exports.registerBurger = async (req, res) => {
         );
 
         await db.query('UPDATE burgers SET created_by_name = (SELECT user_name FROM users WHERE users.user_id = burgers.created_by)')
+        await db.query('UPDATE burgers SET created_by_phone = (SELECT phone FROM users WHERE users.user_id = burgers.created_by)')
 
         return res.status(201).json({
             success: true,

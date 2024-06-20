@@ -6,6 +6,7 @@ import './styles/register.css'
 const Register = () => {
     const [values, setValues] = useState({
         user_name:'',
+        phone: '',
         email: '',
         password: ''
     })
@@ -25,7 +26,7 @@ const Register = () => {
             
             setError('')
             setSuccess(data.message)
-            setValues({user_name: '', email: '', password: ''})
+            setValues({user_name: '', phone: '', email: '', password: ''})
 
         } catch (error) {
             console.log(error.response.data.errors[0].msg)
@@ -49,6 +50,13 @@ const Register = () => {
                         Nome completo:
                     </label>
                     <input onChange={(e) => onChange(e)} type='text' className='form-control' id='user_name' name='user_name' value={values.user_name} placeholder='Insira seu nome completo' required />
+                </div>
+
+                <div className='mb-3'>
+                    <label htmlFor='text' className='form-label'>
+                        Telefone:
+                    </label>
+                    <input onChange={(e) => onChange(e)} type='text' className='form-control' id='phone' name='phone' value={values.phone} placeholder='Insira seu telefone' required />
                 </div>
 
                 <div className='mb-3'>

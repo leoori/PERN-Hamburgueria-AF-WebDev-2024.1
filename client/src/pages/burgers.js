@@ -45,6 +45,7 @@ const Burgers = () => {
                                             <th scope='col'>Preço</th>
                                             <th scope='col'>Quantidade em Estoque</th>
                                             <th scope='col'>Criado por</th>
+                                            <th scope='col'>Telefone</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,6 +57,7 @@ const Burgers = () => {
                                                 <td>R$ {burger.burger_price}</td>
                                                 <td>{burger.burger_supply}</td>
                                                 <td>{burger.created_by_name}</td>
+                                                <td>{burger.created_by_phone}</td>
                                             </tr>
                                         ))}
                                     </tbody>

@@ -26,3 +26,9 @@ ADD COLUMN created_by INTEGER REFERENCES users(user_id);
 --alter burger table
 ALTER TABLE burgers
 ADD COLUMN created_by_name VARCHAR(255);
+
+--alter table burger
+alter table burgers add column created_by_phone varchar(15);
+
+--alter table users
+alter table users add column phone varchar(15);
