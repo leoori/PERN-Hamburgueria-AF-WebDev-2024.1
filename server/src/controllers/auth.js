@@ -62,7 +62,7 @@ exports.login = async (req, res) => {
 exports.protected = async(req, res) => {
     try {
         return res.status(200).json({
-            info: 'informacao protegida'
+            //info: 'informacao protegida'
         })
     } catch (error) {
         console.log(error.message)
