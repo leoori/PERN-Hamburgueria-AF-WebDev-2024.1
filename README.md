@@ -8,3 +8,4 @@
 - Leonardo Almeida Proença | 222241
 - Thiago Jun Honma | 222628
 - Maria Julia de Paula Dutil | 222338
+- Isabela Freire de Góes | 211747
