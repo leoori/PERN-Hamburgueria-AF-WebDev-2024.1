@@ -28,7 +28,7 @@ const Burgers = () => {
         <Layout>
             <div className='burgers-container'>
                 <div className='container'>
-                    <h1 className='burgers-heading'>Lista de Hambúrgueres Cadastrados</h1>
+                    <h1 className='burgers-heading'>Hambúrgueres Cadastrados</h1>
                     <div className="table-container">
                         {loading ? (
                             <p className='text-center'>Carregando hambúrgueres...</p>

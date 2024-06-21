@@ -47,9 +47,9 @@ const Register = () => {
 
                 <div className='mb-3'>
                     <label htmlFor='text' className='form-label'>
-                        Nome completo:
+                        Nome da Hamburgueria:
                     </label>
-                    <input onChange={(e) => onChange(e)} type='text' className='form-control' id='user_name' name='user_name' value={values.user_name} placeholder='Insira seu nome completo' required />
+                    <input onChange={(e) => onChange(e)} type='text' className='form-control' id='user_name' name='user_name' value={values.user_name} placeholder='Insira o nome da sua hamburgueria' required />
                 </div>
 
                 <div className='mb-3'>

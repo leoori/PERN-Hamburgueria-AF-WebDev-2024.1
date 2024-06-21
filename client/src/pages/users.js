@@ -28,7 +28,7 @@ const Users = () => {
         <Layout>
             <div className='users-container'>
                 <div className='container mt-3'>
-                    <h1>Lista de Usuários Cadastrados</h1>
+                    <h1>Usuários Cadastrados</h1>
                     {loading ? (
                         <p>Carregando usuários...</p>
                     ) : error ? (
@@ -41,6 +41,7 @@ const Users = () => {
                                         <th scope='col'>ID</th>
                                         <th scope='col'>Nome</th>
                                         <th scope='col'>Email</th>
+                                        <th scope='col'>Telefone</th>
                                         <th scope='col'>Data de Cadastro</th>
                                     </tr>
                                 </thead>
@@ -50,6 +51,7 @@ const Users = () => {
                                             <td>{user.user_id}</td>
                                             <td>{user.user_name}</td>
                                             <td>{user.email}</td>
+                                            <td>{user.phone}</td>
                                             <td>{new Date(user.created_at).toLocaleDateString()}</td>
                                         </tr>
                                     ))}
